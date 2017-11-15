@@ -17,7 +17,6 @@ body {
 
 img {
   width: 100%;
-  max-height: 100%;
 }
 
 h1 {
@@ -48,6 +47,12 @@ a {
 a:hover {
   background-color: #0362C1;
   color: white;
+}
+
+.scroll-wrapper {
+  scroll-snap-type: proximity;
+  -webkit-scroll-snap-type: proximity;
+  -ms-scroll-snap-type: proximity;
 }
 
 /*  LANDING  */
@@ -96,6 +101,9 @@ span {
   background-color: white;
   margin:  3rem auto 3rem auto;
   box-shadow: 0 5px 5px #888888;
+  
+  -ms-display: grid;
+  -ms-grid-template-columns: 1fr 1fr;
 }
 .left-card {
   background-size: cover;
@@ -125,6 +133,10 @@ span {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 2rem;
+  
+  -ms-display: grid;
+  -ms-grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-gap: 2rem;
 }
 .break h1 {
   text-align: center;
@@ -134,7 +146,7 @@ span {
 }
 
 /*  MEDIA QUERIES  */
-@media only screen and (max-width: 750px) {
+@media only screen and (orientation: portrait) and (max-width: 700px) {
   .landing h1 {
     font-size: 3rem;
     line-height: 2.5rem;
@@ -145,6 +157,9 @@ span {
     width: 20rem;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 3fr;
+    
+    -ms-grid-template-columns: 1fr;
+    -ms-grid-template-rows: 1fr 3fr;
   }
   
   .card h1 {
@@ -155,5 +170,38 @@ span {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+    
+    -ms-display: grid;
+    -ms-grid-template-columns: 1fr;
+    -ms-grid-template-rows: 1fr 1fr 1fr;
   }
+}
+
+@media only screen and (orientation:landscape) and (max-width: 800px) {
+  .landing h1 {
+    font-size: 3rem;
+    line-height: 2.5rem;
+    padding: 10rem 0 2.5rem 2.5rem;
+  }
+  
+  .card {
+    width: 90%;
+    height: 90vh;
+    
+     grid-template-columns: 1fr 2fr;
+    -ms-grid-template-columns: 1fr 2fr;
+  }
+  
+  .left-card {
+    background-size: 100% 100%;
+  }
+  
+  .card h1 {
+    font-size: 2rem;
+    line-height: 1.75rem;
+  }
+  
+  .container {
+  padding: 1rem 2rem;
+}
 }
